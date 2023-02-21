@@ -29,3 +29,4 @@ print_head "restarting nginx service"
 systemctl restart nginx &>>{log_file}
 
 
+
