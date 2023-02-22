@@ -14,5 +14,6 @@ status_check() {
     echo FAILURE
     echo "Read the log file ${log_file}"
     exit 1
+  fi
 }
 #-----------------------------------------
