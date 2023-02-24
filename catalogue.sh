@@ -9,7 +9,9 @@ yum install nodejs -y &>>${log_file}
 status_check $?
 
 print_head "add app user"
-useradd roboshop &>>${log_file}
+if [ $? -ne 0 ]; then
+  useradd roboshop &>>${log_file}
+fi
 status_check $?
 
 print_head "create app directory"
@@ -38,11 +40,11 @@ print_head "reload"
 systemctl daemon-reload &>>${log_file}
 status_check $?
 
-print_head "enable catalouge"
+print_head "enable catalogue"
 systemctl enable catalogue &>>${log_file}
 status_check $?
 
-print_head "start catalouge"
+print_head "start catalogue"
 systemctl start catalogue &>>${log_file}
 status_check $?
 
