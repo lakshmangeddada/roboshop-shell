@@ -127,7 +127,7 @@ java() {
 
   # SystemD Function
   systemd_setup
-}
+}c
 
 python() {
 
